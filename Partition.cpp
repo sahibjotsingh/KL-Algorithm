@@ -7,7 +7,7 @@ Partition::Partition(int nodes)
 	this->nodes=nodes;
 }
 
-void Partition::partition(vector<int> &partition1, vector<int> &partition2, int s1, int s2, vector<bool> &permanent_lock)
+void Partition::partition(vector<int> &partition1, vector<int> &partition2, int s1, int s2, vector<int> &permanent_lock)
 {
 	int i;
 	
