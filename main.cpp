@@ -124,29 +124,29 @@ void KLAlgo(map< pair<int, int>, int> &edgeSet, vector<int> &ans, vector<int> &p
 
 int main()
 {
-	int K1;
+	int nodes, i, j, k, K1, start_s, stop_s, inodes;
 	cout<<"Enter the partitions in which the graph should be divided ";
 	cin>>K1;
 
-	int nodes, i, j, k;
 	map< pair<int, int>, int> edgeSet;
 	vector<int> ans;
 
 	Graph graph; 
 	nodes = graph.Nodes(); 
-	int inodes = nodes;
+	inodes = nodes;
+	graph.buildEdgeSet(edgeSet);
+
+	vector<int> permanent_lock(nodes, false);
+	vector<int> D(nodes, 0);
+	
+	start_s = clock();
 	if(nodes == K1)
 	{
 		cout<<"Given graph is already divided into "<<K1<<" partitions"<<endl;
 	}
 	else
 	{
-		graph.buildEdgeSet(edgeSet);
-
-		vector<int> permanent_lock(nodes, false);
-		vector<int> D(nodes, 0);
-	
-		while(K1!=1)
+		while(K1 != 1)
 		{
 			KLAlgo(edgeSet, ans, permanent_lock, D, K1, nodes, inodes);
 			inodes = inodes - (inodes/K1);
@@ -164,5 +164,8 @@ int main()
 		}
 		*/
 	}
+	stop_s = clock();
+	cout << "time: " << (stop_s - start_s)/double(CLOCKS_PER_SEC) <<" seconds" endl;
+	
 	return 0;
 }
