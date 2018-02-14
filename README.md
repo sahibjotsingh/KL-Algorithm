@@ -7,7 +7,7 @@ The edges are stored in a map with edge(u, v) and weight(w) as key value pair. I
 2. D value is calculated for each node.
 3. Further steps of KL algorithm are performed, which tells the nodes that need to be swapped in-order to get min edges across those 2 partitions. 
 4. In this step the swaps take place (if any).
-5. If max value of g found is less than 0 ie. no swap has taken place, then go to step 2.
+5. If max value of g found is less than or equal to 0 ie. no swap has taken place, then go to step 2.
 6. The nodes of partition with size N/K are locked. They will not be considered further. Only their effect will be considered.
 7. Change N to N - (N/K) and K to K - 1. If K is 1 it means we have obtained all partitions and break. Otherwise, go to step 1.
 
