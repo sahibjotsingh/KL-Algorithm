@@ -93,7 +93,7 @@ void KLAlgo(map< pair<int, int>, int> &edgeSet, vector<int> &ans, vector<int> &p
 	}
 		
 	if(maxg<0 && K==1)
-		K=-1;
+		K = -1;
 		
 	for(i=0;i<K;++i)
 	{
@@ -102,23 +102,19 @@ void KLAlgo(map< pair<int, int>, int> &edgeSet, vector<int> &ans, vector<int> &p
 	
 	if((K1-1) == 1)
 	{
-		for(i=0;i<partition1.size();++i)
+		for(i = 0; i < partition1.size(); ++i)
 		{
 			ans.push_back(partition1[i]);
-			cout<<partition1[i]<<" ";
 			permanent_lock[partition1[i]]=1;
 		}
-		cout<<endl;
 		ans.push_back(-1);
 	}
 
 	for(i=0;i<partition2.size();++i)
 	{
 		ans.push_back(partition2[i]);
-		cout<<partition2[i]<<" ";
 		permanent_lock[partition2[i]]=1;
 	}
-	cout<<endl;
 	ans.push_back(-1);
 }
 
